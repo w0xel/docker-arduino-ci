@@ -11,7 +11,10 @@ RUN apt-get update -qq \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
-ENV ARDUINO_VERSION 1.8.1
+ADD get-version.sh /usr/local/bin/get-version.sh
+RUN chmod +x /usr/local/bin/get-version.sh
+
+ENV ARDUINO_VERSION 1.8.2
 
 RUN wget -nv http://downloads.arduino.cc/arduino-${ARDUINO_VERSION}-linux64.tar.xz \
   && tar xvf arduino-${ARDUINO_VERSION}-linux64.tar.xz -C /usr/local/share \
