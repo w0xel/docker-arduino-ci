@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-MAINTAINER Alex Tsamakos <alex@actinius.com>
+LABEL maintainer="Alex Tsamakos <alex@actinius.com>"
 
 RUN apt-get update -qq \
   && apt -qq -y install \
