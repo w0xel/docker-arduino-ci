@@ -21,7 +21,6 @@ RUN wget -nv http://downloads.arduino.cc/arduino-${ARDUINO_VERSION}-linux64.tar.
   && ln -s /usr/local/share/arduino-${ARDUINO_VERSION} /usr/local/share/arduino \
   && ln -s /usr/local/share/arduino-${ARDUINO_VERSION}/arduino /usr/local/bin/arduino
 
-RUN arduino --install-boards "arduino:samd" \
-  && arduino --install-boards "arduino:sam"
+RUN arduino --install-boards "arduino:avr"
 
 CMD ["/bin/bash"]
